@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập K4 - Tạo Tab View</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+        .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .tabs { display: flex; cursor: pointer; border-bottom: 2px solid #ddd; }
+        .tab { padding: 10px 20px; background: #eee; margin-right: 5px; border-radius: 4px 4px 0 0; }
+        .tab.active { background: #3498db; color: white; font-weight: bold; }
+        .tab-content { display: none; padding: 15px 0; }
+        .tab-content.active { display: block; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #3498db; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập K4: Tạo Tab View</h2>
+        <div class="tabs">
+            <div class="tab active" onclick="openTab(event, 'tab1')">Tab 1</div>
+            <div class="tab" onclick="openTab(event, 'tab2')">Tab 2</div>
+            <div class="tab" onclick="openTab(event, 'tab3')">Tab 3</div>
+        </div>
+        <div id="tab1" class="tab-content active"><p>Nội dung hiển thị của Tab 1.</p></div>
+        <div id="tab2" class="tab-content"><p>Nội dung hiển thị của Tab 2.</p></div>
+        <div id="tab3" class="tab-content"><p>Nội dung hiển thị của Tab 3.</p></div>
+        <a href="index.html" class="back-link">&larr; Quay về trang chủ</a>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            let contents = document.getElementsByClassName('tab-content');
+            for (let c of contents) c.classList.remove('active');
+            let tabs = document.getElementsByClassName('tab');
+            for (let t of tabs) t.classList.remove('active');
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

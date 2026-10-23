@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập TK5 - Accordion</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .accordion-item { border: 1px solid #ddd; margin-bottom: 10px; border-radius: 4px; overflow: hidden; }
+        .accordion-header { background: #3498db; color: white; padding: 12px; cursor: pointer; font-weight: bold; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 12px; background: #fff; }
+        .accordion-item.active .accordion-content { max-height: 150px; padding: 12px; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #3498db; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập TK5: Accordion đơn giản</h2>
+        <div class="accordion-item" id="acc">
+            <div class="accordion-header" onclick="toggleAccordion()">Bấm vào đây để xem nội dung ẩn</div>
+            <div class="accordion-content">
+                <p>Nội dung của accordion sẽ trượt xuống/lên một cách mượt mà khi bạn bấm vào tiêu đề bằng cách sử dụng JavaScript và CSS transition.</p>
+            </div>
+        </div>
+        <a href="index.html" class="back-link">&larr; Quay về trang chủ</a>
+    </div>
+    <script>
+        function toggleAccordion() {
+            document.getElementById('acc').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
