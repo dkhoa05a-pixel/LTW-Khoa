@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập K8 - Thời gian thực</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; text-align: center; }
+        .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        #clock { font-size: 32px; font-weight: bold; color: #e74c3c; margin: 20px 0; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #3498db; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập K8: Hiển thị thời gian thực</h2>
+        <div id="clock">00:00:00</div>
+        <a href="42.html" class="back-link">&larr; Quay về trang chủ</a>
+    </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>

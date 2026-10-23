@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập K6 - Vòng lặp For/While</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; text-align: center; }
+        .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        button { padding: 8px 12px; background: #9b59b6; color: white; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+        #output { margin-top: 15px; font-weight: bold; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #3498db; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập K6: Vòng lặp For / While</h2>
+        <button onclick="runLoop()">Chạy vòng lặp in số từ 1 đến 10</button>
+        <div id="output"></div>
+        <a href="42.html" class="back-link">&larr; Quay về trang chủ</a>
+    </div>
+    <script>
+        function runLoop() {
+            let text = "";
+            for (let i = 1; i <= 10; i++) {
+                text += i + " ";
+            }
+            document.getElementById('output').innerText = "Kết quả dùng For: " + text;
+        }
+    </script>
+</body>
+</html>

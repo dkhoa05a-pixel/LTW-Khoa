@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập TK8 - Hex sang RGB</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; text-align: center; }
+        .container { max-width: 500px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        input { padding: 8px; width: 60%; font-size: 16px; }
+        button { padding: 8px 12px; background: #e67e22; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        #res { margin-top: 15px; font-weight: bold; }
+        .back-link { display: block; margin-top: 20px; text-decoration: none; color: #3498db; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài tập TK8: Chuyển đổi Hex sang RGB</h2>
+        <input type="text" id="hexInput" placeholder="Ví dụ: #ff0000">
+        <button onclick="convertHexToRGB()">Chuyển đổi</button>
+        <div id="res"></div>
+        <a href="42.html" class="back-link">&larr; Quay về trang chủ</a>
+    </div>
+    <script>
+        function convertHexToRGB() {
+            let hex = document.getElementById('hexInput').value.trim();
+            if(hex.startsWith('#')) hex = hex.slice(1);
+            if(hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+            let bigint = parseInt(hex, 16);
+            let r = (bigint >> 16) & 255;
+            let g = (bigint >> 8) & 255;
+            let b = bigint & 255;
+            document.getElementById('res').innerText = `RGB: rgb(${r}, ${g}, ${b})`;
+        }
+    </script>
+</body>
+</html>
